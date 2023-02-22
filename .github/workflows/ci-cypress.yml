@@ -43,12 +43,10 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           working-directory: ./test
-#           start: |
-#             yarn start:api
-#           wait-on: "http://127.0.0.1:8002"
           start: |
+            yarn start:api
             yarn start:ui
-          wait-on: "http://127.0.0.1:3000"
+          wait-on: "http://127.0.0.1:3000,http://127.0.0.1:8002/health/"
         env:
           NEXT_PUBLIC_PASSPORT_SCORER_ALCHEMY_API_KEY: ${{ secrets.NEXT_PUBLIC_PASSPORT_SCORER_ALCHEMY_API_KEY }}
           # config: 'baseUrl=http://localhost:8000'
