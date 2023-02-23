@@ -81,7 +81,7 @@ jobs:
           python manage.py migrate
       - name: Install Interface Dependencies
         working-directory: ./interface
-        run: yarn --frozen-lockfile && yarn build
+        run: yarn --frozen-lockfile
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v5
